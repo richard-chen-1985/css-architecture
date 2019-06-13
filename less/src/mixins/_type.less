@@ -1,0 +1,98 @@
+/// opacity
+///
+/// @param {Number} @o - 不透明度，0-100
+///
+/// @example
+///     .opacity(70);
+.opacity(@o: 70) {
+  filter: alpha(opacity= @o);
+  -moz-opacity: @o / 100;
+  opacity: @o / 100;
+}
+
+/// 文本超出显示...
+///
+/// @param {Number} @lines - 行数，默认为1
+///
+/// @example
+///    // scss
+///    .text-truncate();
+///    // css
+///    {
+///      overflow:hidden;
+///      white-space: nowrap;
+///      text-overflow: ellipsis;
+///    }
+.text-truncate(@lines) when (@lines = 1) {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.text-truncate(@lines) when (@lines > 1) {
+  display: -webkit-box;
+  display: box;
+  -webkit-line-clamp: @lines;
+  line-clamp: @lines;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+}
+
+/// 生成一个三角形
+///
+/// @param {Number|String} @width - 边框宽度
+/// @param {String} @color - 边框颜色
+/// @param {String} @direction - 方向[down|left|up|right]
+///
+/// @exampe
+///    .triangle(6px, #f0f, down);
+.triangle(@width, @color, @direction) {
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border-style: solid;
+  border-width: @width;
+  & when (@direction = "down") {
+    border-color: @color transparent transparent transparent;
+  }
+  & when (@direction = "left") {
+    border-color: transparent @color transparent transparent;
+  }
+  & when (@direction = "up") {
+    border-color: transparent transparent @color transparent;
+  }
+  & when (@direction = "right") {
+    border-color: transparent transparent transparent @color;
+  }
+}
+
+/// clearfix
+.clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/// Unstyled keeps list items block level, just removes default browser padding and list-style
+.list-unstyled() {
+  padding-left: 0;
+  list-style: none;
+}
+
+.size(@width, @height: @width) {
+  width: @width;
+  height: @height;
+}
+
+/// displays
+/// ===============================
+.invisible() {
+  visibility: hidden !important;
+}

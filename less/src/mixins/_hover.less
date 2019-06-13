@@ -1,0 +1,32 @@
+.hover(@link-hover-color, @link-hover-decoration) {
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: @link-hover-decoration;
+  }
+}
+
+.hover-focus() {
+  &:focus,
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: @link-hover-decoration;
+  }
+}
+
+.plain-hover-focus() {
+  &,
+  &:focus,
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: @link-hover-decoration;
+  }
+}
+
+.hover-focus-active() {
+  &:focus,
+  &:active,
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: @link-hover-decoration;
+  }
+}

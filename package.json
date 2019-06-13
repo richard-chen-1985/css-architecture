@@ -1,0 +1,25 @@
+{
+  "name": "css-architecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass ./sass/src/main.scss ./sass/output/main.css",
+    "less": "lessc ./less/src/main.less ./less/output/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richard-chen-1985/css-architecture.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richard-chen-1985/css-architecture/issues"
+  },
+  "homepage": "https://github.com/richard-chen-1985/css-architecture#readme",
+  "dependencies": {
+    "less": "^3.9.0",
+    "node-sass": "^4.12.0"
+  }
+}
